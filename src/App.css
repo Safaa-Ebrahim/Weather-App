@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: linear-gradient(80deg, #000428, #004e92);
+  font-family: Arial, sans-serif !important;
+  padding: 2rem;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+}
+:root {
+  --white-70: rgba(255, 255, 255, 0.7);
+}
+/* common class */
+.white-70 {
+  color: var(--white-70);
+}
+/* common class */
+.box {
+  background: url("assets/bg-weather.png") 100% center;
+  box-shadow: rgba(200, 200, 200, 0.3) 0px 1px 2px 0px,
+    rgba(200, 200, 200, 0.15) 0px 1px 3px 1px;
+}
+@media (max-width: 600px) {
+  .box {
+    box-shadow: none;
+  }
+}
+.logo {
+  height: 22px;
+}
+.date {
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .logo {
+    height: 16px;
+  }
+  .date {
+    font-size: 9px;
+    font-weight: 400 !important;
+  }
+}
+.github {
+  transition: 0.3s;
+}
+.github:hover {
+  color: rgb(45, 149, 189) !important;
+}
+
+.box .weather-container {
+  min-height: 500px;
+}
+.box .weather-container h4 {
+  max-width: 80%;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .box .weather-container h4 {
+    font-size: 12px;
+  }
+}
+.box .splash-icon {
+  width: 120px;
+  height: 120px;
+}
+@media (max-width: 600px) {
+  .box .splash-icon {
+    width: 100px;
+    height: 100px;
+  }
+}
