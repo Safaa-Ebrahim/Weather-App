@@ -1,43 +1,34 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_APT_URL, geoApiOptions } from "../../api";
+import { fetchCities } from "../../api";
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
 
-  const handelOnChange = (searchData) => {
+  const loadOptions = async (inputValue) => {
+    const citiesList = await fetchCities(inputValue);
+
+    return {
+      options: citiesList.data.map((city) => {
+        return {
+          value: `${city.latitude} ${city.longitude}`,
+          label: `${city.name} ${city.countryCode}`,
+        };
+      }),
+    };
+  };
+
+  const onChangeHandler = (searchData) => {
     setSearch(searchData);
-    // onSearchChange(searchData);
+    onSearchChange(searchData);
   };
-
-  const loadOption = async (value) => {
-    try {
-      const response = await fetch(
-        `${GEO_APT_URL}/cities?minPopulation=1000000&namePrefix=${value}`,
-        geoApiOptions
-      );
-      const result = await response.json();
-      return {
-        options: result.data.map((city) => {
-          console.log(city);
-          return {
-            value: `${city.latitude} ${city.longitude}`,
-            label: `${city.name} ${city.countryCode}`,
-          };
-        }),
-      };
-    } catch (err) {
-      return console.log(err);
-    }
-  };
-
   return (
     <AsyncPaginate
       placeholder="Search For City"
       debounceTimeout={600}
       value={search}
-      onChange={handelOnChange}
-      loadOptions={loadOption}
+      onChange={onChangeHandler}
+      loadOptions={loadOptions}
     />
   );
 };
