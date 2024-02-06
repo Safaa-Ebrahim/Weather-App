@@ -1,9 +1,11 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 body {
+  background: -o-linear-gradient(10deg, #000428, #004e92);
   background: linear-gradient(80deg, #000428, #004e92);
   font-family: Arial, sans-serif !important;
   padding: 2rem;
@@ -20,22 +22,53 @@ body {
 .white-70 {
   color: var(--white-70);
 }
+.h-31 {
+  height: 31px;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (min-width: 900px) {
+  .title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 899px) {
+  .title {
+    font-size: 16px;
+  }
+}
+@media (max-width: 599px) {
+  .title {
+    font-size: 12px;
+  }
+}
 /* common class */
 .box {
   background: url("assets/bg-weather.png") 100% center;
+  -webkit-box-shadow: rgba(200, 200, 200, 0.3) 0px 1px 2px 0px,
+    rgba(200, 200, 200, 0.15) 0px 1px 3px 1px;
   box-shadow: rgba(200, 200, 200, 0.3) 0px 1px 2px 0px,
     rgba(200, 200, 200, 0.15) 0px 1px 3px 1px;
 }
 @media (max-width: 600px) {
   .box {
+    -webkit-box-shadow: none;
     box-shadow: none;
   }
 }
 .logo {
-  height: 22px;
+  height: 26px;
 }
 .date {
   font-size: 12px;
+}
+@media (max-width: 900px) {
+  .logo {
+    height: 22px;
+  }
 }
 @media (max-width: 600px) {
   .logo {
@@ -47,6 +80,8 @@ body {
   }
 }
 .github {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 .github:hover {
@@ -56,12 +91,12 @@ body {
 .box .weather-container {
   min-height: 500px;
 }
-.box .weather-container h4 {
+.box .weather-container > h4 {
   max-width: 80%;
   font-size: 14px;
 }
 @media (max-width: 600px) {
-  .box .weather-container h4 {
+  .box .weather-container > h4 {
     font-size: 12px;
   }
 }
