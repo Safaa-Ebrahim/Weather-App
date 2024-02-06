@@ -1,26 +1,14 @@
 import React from "react";
+import { getWeekDays } from './../../utilities/DatetimeUtils';
+// style
 import style from "./forecast.module.css";
 
 import humidity from "../../assets/humidity.svg";
 import clouds from "../../assets/clouds.svg";
 
-const WEEK_DAYS = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
-
 const Forecast = ({ data }) => {
-  const dayInWeek = new Date().getDay();
-  const forecastDays = WEEK_DAYS.slice(dayInWeek, WEEK_DAYS.length).concat(
-    WEEK_DAYS.slice(0, dayInWeek)
-  );
+  const forecastDays=getWeekDays();
   const forecastList = data.list.splice(0, 6);
-
   return (
     <div className="text-white">
       <h5 className="fw-semibold text-center lh-1 white-70 title">
