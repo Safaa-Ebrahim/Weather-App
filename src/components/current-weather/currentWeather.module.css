@@ -1,0 +1,74 @@
+@media (min-width: 900px) {
+  .title {
+    font-size: 18px;
+  }
+  .topParag {
+    font-size: 16px;
+  }
+  .bottomParag {
+    font-size: 14px;
+  }
+}
+@media (max-width: 899px) {
+  .title {
+    font-size: 16px;
+  }
+  .topParag {
+    font-size: 14px;
+  }
+  .bottomParag {
+    font-size: 12px;
+  }
+}
+@media (max-width: 599px) {
+  .title {
+    font-size: 12px;
+  }
+  .topParag {
+    font-size: 12px;
+  }
+}
+.weather-icon {
+  height: 80px;
+}
+.weather-icon img {
+  width: 60px;
+}
+@media (max-width: 600px) {
+  .weather-icon img {
+    width: 50px;
+  }
+}
+.airLogo {
+  width: 1rem;
+  height: 1rem;
+}
+.avaliable {
+  color: rgb(4, 196, 224);
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .avaliable {
+    font-size: 10px;
+  }
+}
+.time{
+  font-size: 12px;
+}
+.temp{
+  font-size: 14px;
+}
+.icon{
+  width: 42px;
+}
+@media(max-width:600px){
+  .time{
+    font-size: 10px;
+  }
+  .temp{
+    font-size: 12px;
+  }
+  .icon{
+    width: 36px;
+  }
+}
